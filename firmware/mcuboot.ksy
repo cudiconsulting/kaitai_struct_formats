@@ -38,9 +38,9 @@ types:
         size: header_size - 28
     enums:
       image_flag:
-        1: icmp
-        10: tcp
-        20: udp
+        0x01: pic
+        0x10: non_bootable
+        0x20: ram_load
   image_version:
     seq:
       - id: major
@@ -71,14 +71,14 @@ types:
         size: len
     enums:
       tlv_types:
-        1: key_hash
-        10: sha256
-        20: rsa2048_pss
-        21: ecdsa224
-        22: ecdsa256
-        23: rsa3072_pss
-        24: ed25519
-        30: enc_rsa2048
-        31: enc_kw128
-        32: enc_ec256
-        40: dependency
+        0x01: key_hash
+        0x10: sha256
+        0x21: rsa2048_pss
+        0x21: ecdsa224
+        0x22: ecdsa256
+        0x23: rsa3072_pss
+        0x24: ed25519
+        0x30: enc_rsa2048
+        0x31: enc_kw128
+        0x32: enc_ec256
+        0x40: dependency
