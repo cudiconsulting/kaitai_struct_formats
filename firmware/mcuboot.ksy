@@ -10,8 +10,8 @@ seq:
   - id: tvl_header
     type: tvl_header
   - id: tlv_values
-    type: tlv
-    repeat: eos
+    type: tvl_values
+    size: tvl_header.tvl_size - 4
 types:
   image_header:
     seq:
@@ -58,6 +58,11 @@ types:
       - id: tvl_size
         type: u2
         doc: Size of the TVL area (including the the header)
+  tvl_values:
+    seq:
+      - id: values
+        type: tlv
+        repeat: eos
   tlv: 
     seq:
       - id: type
